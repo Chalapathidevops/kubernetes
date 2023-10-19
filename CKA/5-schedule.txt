@@ -1,0 +1,22 @@
+********************
+  CKA Question
+********************
+Schedule a pod as follows
+	- Name: nginx-kusc00401
+	- Image: ngix
+	- Node Selector: disk=spinning
+
+And:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-kusc00401
+spec:
+  nodeSelector:
+    disk: spinning
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
