@@ -1,12 +1,12 @@
 ********************
-  CKA Question
+  CKA Exam Question
 ********************
 Schedule a pod as follows
 	- Name: nginx-kusc00401
 	- Image: ngix
 	- Node Selector: disk=spinning
 
-And:
+Ans:
 
 apiVersion: v1
 kind: Pod
