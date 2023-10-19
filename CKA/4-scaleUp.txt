@@ -1,6 +1,6 @@
-****************
-  CKA Question
-****************  
+********************
+  CKA Exam Question
+********************
   Scale the deployment loadbalancer to 6
 Ans:
    kubectl create deploy loadbalancer --image nginx (This Deployment already exist, Just need to scale up to 6)
