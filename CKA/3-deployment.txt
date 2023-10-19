@@ -37,9 +37,9 @@ spec:
         - containerPort: 80
 -------------------------------------------------
 
-******************
-  CKA Question
-*****************
+********************
+  CKA Exam Question
+********************
 Reconfigure the existing deployment front-end and add a port specification named http existing port 80/tcp of the existing container nginx
 	- Create a new service name front-end-svc exposing the container port http
 	- Configure the new service  to also expose the individual pods via NodePort on the nodes on which they are scheduled.
