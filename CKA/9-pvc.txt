@@ -1,0 +1,52 @@
+**********************
+CKA Exam Question
+*********************
+ Create a new PersistentVolumeClaim 
+	- name: pv-volume
+	- class: csi-hostpath-sc
+	- capacity: 10Mi
+ Create a new pod which mount the the PersistentVolumeClaim as a volume
+	- name: web-server
+	- image: nginx
+	- mount path: /usr/share/nginx/html
+ Configure the new pod to have ReadWriteOnce access on the volume
+ Finally, usiong kubectl edit to kubectl patch expand the PersistentVolumeClaim to a capacity of 70Mi and record that change
+
+ Ans:
+
+ ---- PersistentVolumeClaim
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-volume
+spec:
+  storageClassName: "csi-hostpath-sc"     
+  resources:
+    requests:
+      storage: 10Mi
+  accesModes:
+  - ReadWriteOnce
+
+
+----- Pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-server
+spec:
+  volumes:
+  - name: pv-volume
+    persistentVolumeClaim:
+      claimName: pv-volume
+  containers:
+  - name: nginxcontainer
+    image: nginx
+    ports: 
+    - containerPort: 80
+    volumeMounts:
+    - mounthPath: "/usr/share/nginx/html"
+      name: pv-volume
+
+---- kubectl edit pvc pvc-name --record      
