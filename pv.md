@@ -1,0 +1,1 @@
+Persistent Volume (PV) in Kubernetes is like a storage space you can reserve for your applications running in containers. It's a way to ensure that your data is not lost even if your application crashes or moves to a different server.
