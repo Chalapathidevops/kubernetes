@@ -1,13 +1,12 @@
-********************
-  CKA Exam Question
-********************
-Schedule a pod as follows
-	- Name: nginx-kusc00401
-	- Image: ngix
-	- Node Selector: disk=spinning
+## CKA Exam Question
+Schedule a pod as follows <br>
+&emsp; Name: nginx-kusc00401 <br>
+&emsp; Image: ngix <br>
+&emsp; Node Selector: disk=spinning <br>
 
-Ans:
+***Ans***
 
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -20,3 +19,5 @@ spec:
     image: nginx
     ports:
     - containerPort: 80
+
+```
