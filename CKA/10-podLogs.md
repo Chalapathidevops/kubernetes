@@ -1,7 +1,7 @@
 ## CKA Exam Question
-Monitor the logs of pod foobar and:
-  - Extract log lines corresponding to error "unable-to-access-website"
-  - Write them to /opt/KUSC00401/foobar
+Monitor the logs of pod foobar and:<br>
+&emsp; Extract log lines corresponding to error "unable-to-access-website"<br>
+&emsp; Write them to /opt/KUSC00401/foobar
 
  Ans:
  
