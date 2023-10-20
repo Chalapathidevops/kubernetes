@@ -1,4 +1,4 @@
-## CKA Question-1
+## CKA Exam Question
 Create clusterrole named "deployment-clusterrole", and bind only to create permissions for Deployment, Daemonse, and Statefulset
 Create service account named "cid-token" in the specified namespace app-team1, create a last-step cluster role and serviceaccount binding.
 
