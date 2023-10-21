@@ -38,20 +38,20 @@ Ensure that the new NetworkPolicy
 
 Ans:
 
-```
+```bash
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: allow-port-from-namespace
   namespace: internal
 spec:
-  podSelector: {}
-  policyTypes:
+  podSelector: {} ## Selects all pods within the same namespace
+  policyTypes: ## Specifies that the NetworkPolicy is for incoming connections
   - Ingress
   ingress:
-  - from:
+  - from:        ## Allows traffic from pods in the internal namespace
     - podSelector: {}
-    ports:
+    ports:      ## Specifies that the allowed traffic is on TCP port 9000
     - port: 9000
 ```
 ```
