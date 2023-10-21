@@ -3,16 +3,16 @@ Create a new PersistentVolumeClaim <br>
 &emsp; name: pv-volume<br>
 &emsp; class: csi-hostpath-sc<br>
 &emsp; capacity: 10Mi<br>
-Create a new pod which mount the the PersistentVolumeClaim as a volume<br>
+Create a new pod which mount the PersistentVolumeClaim as a volume<br>
 &emsp; name: web-server<br>
 &emsp; image: nginx<br>
 &emsp; mount path: /usr/share/nginx/html<br>
 Configure the new pod to have ReadWriteOnce access on the volume <br>
-Finally, usiong kubectl edit to kubectl patch expand the PersistentVolumeClaim to a capacity of 70Mi and record that change
+Finally, using kubectl edit to kubectl patch expand the PersistentVolumeClaim to a capacity of 70Mi and record that change
 
  **Ans**
 
-***PersistentVolumeClaim***
+***Create a PersistentVolumeClaim (PVC) with the initial settings***
 
 ```
 apiVersion: v1
@@ -29,7 +29,7 @@ spec:
 
 ```
 
-***Pod***
+***Create a Pod that mounts the PVC***
 ```
 apiVersion: v1
 kind: Pod
@@ -50,4 +50,14 @@ spec:
       name: pv-volume
 
 ```
----- kubectl edit pvc pvc-name --record      
+***To modify the PVC capacity using kubectl edit, you can follow these steps***
+* First, edit the PVC ```kubectl edit pvc pv-volume```
+* In the editor that opens, locate the **resources** section and change the storage request to the desired capacity (e.g., change **10Mi** to **70Mi**)
+* Save the changes and exit the editor. The PVC will be updated with the new capacity.
+
+***Alternatively, you can use kubectl patch to change the PVC's capacity directly:***
+```
+kubectl patch pvc pv-volume -p '{"spec":{"resources":{"requests":{"storage": "70Mi"}}}'
+```
+This will directly modify the PVC's capacity to 70Mi without opening an editor.
+      
