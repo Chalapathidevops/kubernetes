@@ -5,4 +5,4 @@ Monitor the logs of pod foobar and:<br>
 
  Ans:
  
- ```kubectl logs foobar | grep unable-to-access-website > /opt/KUSC00401/foobar ```
+ ```kubectl logs foobar | grep -i unable-to-access-website > /opt/KUSC00401/foobar ```
