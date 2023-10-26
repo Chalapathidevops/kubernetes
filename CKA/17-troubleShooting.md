@@ -1,7 +1,11 @@
 ## CKA Exam Question - 13%
-In three node cluster worker-1 is "NotReady" state, make sure all the nodes should be Ready state
+In three node cluster worker-1 is "NotReady" state, make sure all the nodes should be Ready state. 
 
-**Ans**
+**(OR)**
+
+A kubernetes worker node, named wk8s-node-0 is in state NotReady. Investigate why this is the case, and perform any appropriate steps to bring the node to a Ready state, ensuring that any changes are made permanent.
+
+**Ans:**
 
 **Check and Identify NotReady nodes**
 
