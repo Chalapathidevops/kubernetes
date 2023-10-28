@@ -39,11 +39,6 @@ kubectl top nodes
 
     Ref: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 
-    https://stackoverflow.com/questions/54106725/docker-kubernetes-mac-autoscaler-unable-to-find-metrics
-    https://forum.linuxfoundation.org/discussion/comment/32209
-
-  OR
-
   * Run `metric-server.yaml` file to configure metrix server into the cluster. `kubectl apply -f metric-server.yaml`
   * Run `deployment.yaml` file 
     
