@@ -37,6 +37,8 @@ kubectl top nodes
 ## Follow below steps to replicate
 * **First we need to setup metric server, follow steps in below post**
 
+    Ref: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
     https://stackoverflow.com/questions/54106725/docker-kubernetes-mac-autoscaler-unable-to-find-metrics
     https://forum.linuxfoundation.org/discussion/comment/32209
 
