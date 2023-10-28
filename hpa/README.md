@@ -43,6 +43,7 @@ kubectl top nodes
   OR
 
   * Run `metric-server.yaml` file to configure metrix server into the cluster. `kubectl apply -f metric-server.yaml`
+  * Run `deployment.yaml` file 
     
 * **Formula HPA uses**
 
