@@ -1,4 +1,4 @@
-
+## CKA Exam Questions
 
 Q1) You have been asked to create a new ClusterRole for a deployment pipeline and bind it to a specific ServiceAccount scoped to a specific namespace. 7%
 
