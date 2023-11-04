@@ -21,7 +21,7 @@ $ kubectl get nodes
 * Login to worker-1 using ssh ```ssh worker-1 (or) ssh <IP address>```
 * Check kubelet is running or not. (Status NotReady means kubelet is not responding)
 
-**Check the status of kubelet and start*** 
+**Check the status of kubelet and start**
 ```
 $ systemctl status kubelet
     # Active: inactive (dead) since Sat 2023-10-21 11:06:48 UTC; 13s ago
