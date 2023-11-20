@@ -45,7 +45,7 @@ Reconfigure the existing deployment front-end and add a port specification named
 
 **Ans:**
 
-**Note:** This deployment already created in Exam, Just we need to add the name of the container
+**Note:** This deployment already created in Exam, Just we need to add the name of the container port name
 
 ```
 apiVersion: apps/v1
