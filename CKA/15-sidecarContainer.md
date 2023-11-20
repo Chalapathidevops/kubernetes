@@ -5,3 +5,40 @@ Use a volume mount named logs to make the file /var/log/legacy-app.log available
 
 * Don't modify the existing container
 * Don't modify the path of the log file, both containers must access it at /var/log/legacy-app.log
+
+**Ans:**
+
+First you should get pod with "`kubectl get pod legacy-app -o yaml >legacy-app.yaml`" then you should edit yaml file as shown below and finally apply the change by "`kubectl apply -f legacy-app.yaml`"
+```YAML
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podname
+spec:
+  containers:
+  - name: count
+    image: busybox
+    args:
+    - /bin/sh
+    - -c
+    - >
+      i=0;
+      while true;
+      do
+        echo "$(date) INFO $i" >> /var/log/legacy-ap.log;
+        i=$((i+1));
+        sleep 1;
+      done
+    volumeMounts:
+    - name: logs
+      mountPath: /var/log
+  - name: count-log-1
+    image: busybox
+    args: [/bin/sh, -c, 'tail -n+1 -f /var/log/legacy-ap.log']
+    volumeMounts:
+    - name: logs
+      mountPath: /var/log
+  volumes:
+  - name: logs
+    emptyDir: {}
+```
