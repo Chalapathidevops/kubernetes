@@ -1,3 +1,10 @@
+
+**Refer below links for CKA Exam Questions and Answers**
+* https://shenhonglei.com/csdn/cka/
+* https://github.com/sandistorm/CKA-Certified-Kubernetes-Administrator-2022/blob/main/CKA%20Exam.md
+* https://www.examtopics.com/discussions/cncf/
+
+
 ## CKA Exam Questions
 
 **Make sure each and every question need to set the context ```kubectl config use-ccontext k8s```**
