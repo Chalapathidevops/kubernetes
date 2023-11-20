@@ -42,4 +42,4 @@ kubectl edit deploy front-end
 ```
 **Expose**
 
-```kubectl expose deploy front-end --name front-end-svc --port 80 --type NodePort```     
+```kubectl expose deploy front-end --name front-end-svc --port 80 --type NodePort --protocal TCP```     
