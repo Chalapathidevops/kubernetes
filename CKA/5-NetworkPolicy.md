@@ -8,6 +8,8 @@ Further ensure that the new NetworkPolicy:
 
 Ans:
 
+Create a label for "internal" namespace `kubectl label ns internal tier=internal`
+
 ```bash
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -22,7 +24,7 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: internal
+              tier: internal
       ports:
         - protocol: TCP
           port: 9000
