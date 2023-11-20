@@ -51,7 +51,7 @@ spec:
 
 ```
 ***To modify the PVC capacity using kubectl edit, you can follow these steps***
-* First, edit the PVC ```kubectl edit pvc pv-volume```
+* First, edit the PVC ```kubectl edit pvc pv-volume --record=true```
 * In the editor that opens, locate the **resources** section and change the storage request to the desired capacity (e.g., change **10Mi** to **70Mi**)
 * Save the changes and exit the editor. The PVC will be updated with the new capacity.
 
