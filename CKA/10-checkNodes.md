@@ -29,4 +29,8 @@ Check both nodes (worker-1 and worker-2) <br>
 $ kubectl describe node worker-1 | grep -i taints | grep -i noschedule
 $ kubectl describe node worker-2 | grep -i taints | grep -i noschedule
 ```
-Write the number to **/opt/KUSC00401/kusc0041.txt** (Note: create a file and enter the number 2 and save)         
+Write the number to **/opt/KUSC00401/kusc0041.txt** (Note: create a file and enter the number 2 and save)   
+
+```
+echo 2 > /opt/KUSC00401/kusc0041.txt
+```
