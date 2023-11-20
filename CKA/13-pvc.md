@@ -43,8 +43,6 @@ spec:
   containers:
   - name: nginxcontainer
     image: nginx
-    ports: 
-    - containerPort: 80
     volumeMounts:
     - mounthPath: "/usr/share/nginx/html"
       name: pv-volume
@@ -57,7 +55,7 @@ spec:
 
 ***Alternatively, you can use kubectl patch to change the PVC's capacity directly:***
 ```
-kubectl patch pvc pv-volume -p '{"spec":{"resources":{"requests":{"storage": "70Mi"}}}'
+kubectl patch pvc pv-volume -p '{"spec":{"resources":{"requests":{"storage":"70Mi"}}}}' --record
 ```
 This will directly modify the PVC's capacity to 70Mi without opening an editor.
       
