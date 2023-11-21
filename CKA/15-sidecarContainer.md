@@ -13,7 +13,7 @@ First you should get pod with "`kubectl get pod legacy-app -o yaml >legacy-app.y
 apiVersion: v1
 kind: Pod
 metadata:
-  name: podname
+  name: podname-15
 spec:
   containers:
   - name: count
@@ -42,3 +42,4 @@ spec:
   - name: logs
     emptyDir: {}
 ```
+* Check logs: `kubectl logs podname-15 -c count-log-1`
