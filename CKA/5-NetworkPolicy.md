@@ -15,21 +15,27 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: allow-port-from-namespace
-  namespace: fubar
+  namespace: internal
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      app: echo  # Assuming 'echo' Pods have this label
   policyTypes:
     - Ingress
   ingress:
     - from:
         - namespaceSelector:
             matchLabels:
-              tier: internal
-      ports:
-        - protocol: TCP
-          port: 9000
+              name: internal
+        - podSelector:
+            matchLabels:
+              app: echo
+        ports:
+          - protocol: TCP
+            port: 9000
+
 ```
 ```
-kubectl apply -f 2.yaml
-kubectl get NetworkPolicy -n fubar
+kubectl apply -f 5.yaml
+kubectl get netpol -n internal
 ```
