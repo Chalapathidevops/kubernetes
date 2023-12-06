@@ -13,7 +13,7 @@ A Pod Disruption Budget (PDB) is a Kubernetes resource that allows you to specif
 
 **Example:**
 
-We have a web application running as a deployment with 10 replicas, and we set PDB as 50%, which means that always the appliation 50% pod should be run all the time. When the cluster administrator Drain the node, it can drain upto 50% of the replicas count, it can't go beyound that.
+We have a web application running as a deployment with 10 replicas, and we've set a Pod Disruption Budget (PDB) at 50%. This ensures that at least 50% of the application's pods should always be running. In the event of a cluster administrator draining the node, it's restricted to removing only up to 50% of the total replicas count. It cannot go beyond that threshold.
 
 
 
